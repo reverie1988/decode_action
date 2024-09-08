@@ -7,7 +7,6 @@
 变量：
 ddgyToken: 必填，账号token，多账号换行或者@隔开，格式uid&token。uid可随便填，主要是方便区分账号用
 
-
 青龙：捉任意game.xiaojukeji.com的包，把请求里面的D-Header-T用填到变量ddgyToken
 uid其实不重要，只是用来区分token所属的账号，方便重写。手动捉包的话uid随便填都可以
 多账号换行或者@隔开，重写多账号直接换号捉就行
