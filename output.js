@@ -1,4 +1,4 @@
-//Mon Sep 16 2024 14:02:04 GMT+0000 (Coordinated Universal Time)
+//Mon Sep 16 2024 14:03:30 GMT+0000 (Coordinated Universal Time)
 //Base:https://github.com/echo094/decode-js
 //Modify:https://github.com/smallfawn/decode_action
 (() => {
@@ -553,13 +553,13 @@
         for (;;) {
           switch (bl.prev = bl.next) {
             case 0:
-              if (console.log("作者：@xzxxn777\n频道：https://t.me/xzxxn777\n群组：https://t.me/xzxxn7777\n自用机场推荐：https://xn--diqv0fut7b.com\n"), j) {
+              if (console.log("\u4F5C\u8005\uFF1A@xzxxn777\n\u9891\u9053\uFF1Ahttps://t.me/xzxxn777\n\u7FA4\u7EC4\uFF1Ahttps://t.me/xzxxn7777\n\u81EA\u7528\u673A\u573A\u63A8\u8350\uFF1Ahttps://xn--diqv0fut7b.com\n"), j) {
                 bl.next = 6;
                 break;
               }
-              console.log("先去boxjs填写账号密码");
+              console.log("\u5148\u53BBboxjs\u586B\u5199\u8D26\u53F7\u5BC6\u7801");
               bl.next = 5;
-              return ac("先去boxjs填写账号密码");
+              return ac("\u5148\u53BBboxjs\u586B\u5199\u8D26\u53F7\u5BC6\u7801");
             case 5:
               return bl.abrupt("return");
             case 6:
@@ -577,7 +577,7 @@
                 break;
               }
               ak = aj.value;
-              console.log("随机生成UA");
+              console.log("\u968F\u673A\u751F\u6210UA");
               al = a6();
               t = al.ua;
               u = al.commonUa;
@@ -587,22 +587,22 @@
               q = ak.split("&")[0];
               r = ak.split("&")[1];
               s = ak.split("&")[2];
-              console.log("用户：".concat(q, "开始任务"));
-              console.log("获取sessionId");
+              console.log("\u7528\u6237\uFF1A".concat(q, "\u5F00\u59CB\u4EFB\u52A1"));
+              console.log("\u83B7\u53D6sessionId");
               bl.next = 29;
               return N("/api/account/init");
             case 29:
               am = bl.sent;
               o = am.data.session.id;
               console.log(o);
-              console.log("获取signature_key");
+              console.log("\u83B7\u53D6signature_key");
               bl.next = 35;
               return H("/web/init?client_id=".concat(x));
             case 35:
               an = bl.sent;
               m = an.data.client.signature_key;
               console.log(m);
-              console.log("获取code");
+              console.log("\u83B7\u53D6code");
               bl.next = 41;
               return J("/web/oauth/credential_auth");
             case 41:
@@ -615,11 +615,11 @@
             case 45:
               ap = ao.data.authorization_code.code;
               console.log(ap);
-              console.log("登录");
+              console.log("\u767B\u5F55");
               bl.next = 50;
               return N("/api/zbtxz/login", "check_token=&code=".concat(ap, "&token=&type=-1&union_id="));
             case 50:
-              if (aq = bl.sent, console.log("登录成功"), p = aq.data.session.account_id, o = aq.data.session.id, console.log("————————————"), console.log("阅读抽奖"), console.log("获取id"), E) {
+              if (aq = bl.sent, console.log("\u767B\u5F55\u6210\u529F"), p = aq.data.session.account_id, o = aq.data.session.id, console.log("\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014"), console.log("\u9605\u8BFB\u62BD\u5956"), console.log("\u83B7\u53D6id"), E) {
                 bl.next = 64;
                 break;
               }
@@ -635,11 +635,11 @@
                 bl.next = 67;
                 break;
               }
-              console.log("获取id失败");
+              console.log("\u83B7\u53D6id\u5931\u8D25");
               return bl.abrupt("continue", 291);
             case 67:
               console.log(E);
-              console.log("获取apiDt");
+              console.log("\u83B7\u53D6apiDt");
               bl.next = 71;
               return P("/aosbase/_auth_dt");
             case 71:
@@ -666,7 +666,7 @@
               aw = bl.sent;
               D = aw.data.access_token;
               B = aw.data.data.user_id;
-              console.log("阅读token：".concat(D));
+              console.log("\u9605\u8BFBtoken\uFF1A".concat(D));
               ax = "";
               ay = Date.now() + "" + Math.floor(10000000 * Math.random());
               bl.next = 87;
@@ -691,14 +691,14 @@
                 bl.next = 101;
                 break;
               }
-              console.log("已完成");
+              console.log("\u5DF2\u5B8C\u6210");
               return bl.abrupt("continue", 176);
             case 101:
               if (ax) {
                 bl.next = 142;
                 break;
               }
-              console.log("获取滑块token");
+              console.log("\u83B7\u53D6\u6ED1\u5757token");
               aF = 0;
             case 104:
               if (!(aF < 3)) {
@@ -718,8 +718,8 @@
               return R("/basemodule/_captcha_get?once=".concat(aG, "&referer=").concat(aI, "&timestamp=").concat(aH, "&type=1&signature=").concat(encodeURIComponent(aJ)));
             case 111:
               aK = bl.sent;
-              console.log("滑块：".concat(aK.data.block));
-              console.log("背景：".concat(aK.data.background));
+              console.log("\u6ED1\u5757\uFF1A".concat(aK.data.block));
+              console.log("\u80CC\u666F\uFF1A".concat(aK.data.background));
               bl.next = 116;
               return Y({
                 slidingImage: aK.data.block,
@@ -730,9 +730,9 @@
                 bl.next = 122;
                 break;
               }
-              console.log("ddddocr服务异常");
+              console.log("ddddocr\u670D\u52A1\u5F02\u5E38");
               bl.next = 121;
-              return ac("ddddocr服务异常");
+              return ac("ddddocr\u670D\u52A1\u5F02\u5E38");
             case 121:
               return bl.abrupt("continue", 139);
             case 122:
@@ -767,7 +767,7 @@
                   time: 100
                 }]
               }, "7Pf0cfZPHy1L7PS2PfCfP8r2BGi461LG", "8RsVKSCH8mQ4l7cu");
-              console.log("验证滑块");
+              console.log("\u9A8C\u8BC1\u6ED1\u5757");
               bl.next = 128;
               return W("/basemodule/_captcha_check", {
                 token: aK.data.token,
@@ -790,10 +790,10 @@
             case 132:
               aP = bl.sent;
               ax = aP.data.tokenid;
-              console.log("滑块token：".concat(ax));
+              console.log("\u6ED1\u5757token\uFF1A".concat(ax));
               return bl.abrupt("break", 142);
             case 138:
-              console.log("验证失败");
+              console.log("\u9A8C\u8BC1\u5931\u8D25");
             case 139:
               aF++;
               bl.next = 104;
@@ -817,11 +817,11 @@
                 bl.next = 168;
                 break;
               }
-              if (aT = aS.value, console.log("文章：".concat(aT.title)), 1 != aT.user_done) {
+              if (aT = aS.value, console.log("\u6587\u7AE0\uFF1A".concat(aT.title)), 1 != aT.user_done) {
                 bl.next = 156;
                 break;
               }
-              console.log("已完成");
+              console.log("\u5DF2\u5B8C\u6210");
               return bl.abrupt("continue", 166);
             case 156:
               var bo = {};
@@ -843,7 +843,7 @@
               return W("/aosbasemodule/task_done", bp);
             case 164:
               aV = bl.sent;
-              console.log("阅读：".concat(aV.msg));
+              console.log("\u9605\u8BFB\uFF1A".concat(aV.msg));
             case 166:
               bl.next = 150;
               break;
@@ -881,7 +881,7 @@
               bl.next = 192;
               return R("/aoslottery/ac_lottery_times?id=".concat(aX));
             case 192:
-              if (aY = bl.sent, console.log("拥有".concat(aY.data.day_remain, "次抽奖")), !(aY.data.day_remain > 0)) {
+              if (aY = bl.sent, console.log("\u62E5\u6709".concat(aY.data.day_remain, "\u6B21\u62BD\u5956")), !(aY.data.day_remain > 0)) {
                 bl.next = 257;
                 break;
               }
@@ -889,7 +889,7 @@
                 bl.next = 237;
                 break;
               }
-              console.log("获取抽奖滑块token");
+              console.log("\u83B7\u53D6\u62BD\u5956\u6ED1\u5757token");
               aZ = 0;
             case 198:
               if (!(aZ < 3)) {
@@ -909,8 +909,8 @@
               return R("/basemodule/_captcha_get?once=".concat(b0, "&referer=").concat(b2, "&timestamp=").concat(b1, "&type=1&signature=").concat(encodeURIComponent(b3)));
             case 205:
               b4 = bl.sent;
-              console.log("滑块：".concat(b4.data.block));
-              console.log("背景：".concat(b4.data.background));
+              console.log("\u6ED1\u5757\uFF1A".concat(b4.data.block));
+              console.log("\u80CC\u666F\uFF1A".concat(b4.data.background));
               bl.next = 210;
               return Y({
                 slidingImage: b4.data.block,
@@ -921,9 +921,9 @@
                 bl.next = 216;
                 break;
               }
-              console.log("ddddocr服务异常");
+              console.log("ddddocr\u670D\u52A1\u5F02\u5E38");
               bl.next = 215;
-              return ac("ddddocr服务异常");
+              return ac("ddddocr\u670D\u52A1\u5F02\u5E38");
             case 215:
               return bl.abrupt("continue", 234);
             case 216:
@@ -958,7 +958,7 @@
                   time: 100
                 }]
               }, "7Pf0cfZPHy1L7PS2PfCfP8r2BGi461LG", "8RsVKSCH8mQ4l7cu");
-              console.log("验证滑块");
+              console.log("\u9A8C\u8BC1\u6ED1\u5757");
               bl.next = 222;
               return W("/basemodule/_captcha_check", {
                 token: b4.data.token,
@@ -971,7 +971,7 @@
                 bl.next = 233;
                 break;
               }
-              console.log("验证成功");
+              console.log("\u9A8C\u8BC1\u6210\u529F");
               bl.next = 227;
               return W("/aosbasemodule/intelverifcode_check", {
                 validate: b8.data.token,
@@ -982,10 +982,10 @@
             case 227:
               b9 = bl.sent;
               ax = b9.data.tokenid;
-              console.log("抽奖滑块token：".concat(ax));
+              console.log("\u62BD\u5956\u6ED1\u5757token\uFF1A".concat(ax));
               return bl.abrupt("break", 237);
             case 233:
-              console.log("验证失败");
+              console.log("\u9A8C\u8BC1\u5931\u8D25");
             case 234:
               aZ++;
               bl.next = 198;
@@ -1014,7 +1014,7 @@
                 _need_behavior: 1,
                 event: "lotteryTake",
                 action: "take",
-                brief: "抽奖提交",
+                brief: "\u62BD\u5956\u63D0\u4EA4",
                 client_type: 3,
                 module_id: ba.data.m_id,
                 content_id: ba.data.id,
@@ -1044,7 +1044,7 @@
                 address: ""
               });
             case 246:
-              if (bc = bl.sent, console.log("抽奖提交：".concat(bc.msg)), 0 == bc.code) {
+              if (bc = bl.sent, console.log("\u62BD\u5956\u63D0\u4EA4\uFF1A".concat(bc.msg)), 0 == bc.code) {
                 bl.next = 250;
                 break;
               }
@@ -1063,7 +1063,7 @@
               return W("/aoslottery/ac_sub", bq);
             case 252:
               bd = bl.sent;
-              0 == bd.code ? console.log("抽奖获得：".concat(null == bd || null === (be = bd.data) || void 0 === be ? void 0 : be.title)) : "o d w" == bd.msg ? console.log("谢谢参与") : console.log(bd.msg);
+              0 == bd.code ? console.log("\u62BD\u5956\u83B7\u5F97\uFF1A".concat(null == bd || null === (be = bd.data) || void 0 === be ? void 0 : be.title)) : "o d w" == bd.msg ? console.log("\u8C22\u8C22\u53C2\u4E0E") : console.log(bd.msg);
             case 254:
               bb++;
               bl.next = 243;
@@ -1092,21 +1092,21 @@
                 bl.next = 281;
                 break;
               }
-              if (console.log("奖品：".concat(bj.title)), !s) {
+              if (console.log("\u5956\u54C1\uFF1A".concat(bj.title)), !s) {
                 bl.next = 279;
                 break;
               }
-              console.log("领取奖品");
+              console.log("\u9886\u53D6\u5956\u54C1");
               bl.next = 275;
               return U("/aosbasemodule/cash_send?module_id=".concat(bj.module_id, "&activity_id=").concat(bj.id, "&cash_code=").concat(bj.code, "&cash_sign=").concat(bj.cash_data.cash_sign));
             case 275:
               bk = bl.sent;
-              0 == bk.code ? (console.log("领取成功"), n += "用户：".concat(q, " 抽奖获得：").concat(bj.title, " 领取结果：领取成功\n")) : (console.log(bk.msg), n += "用户：".concat(q, " 抽奖获得：").concat(bj.title, " 领取结果：").concat(bk.msg, "\n"));
+              0 == bk.code ? (console.log("\u9886\u53D6\u6210\u529F"), n += "\u7528\u6237\uFF1A".concat(q, " \u62BD\u5956\u83B7\u5F97\uFF1A").concat(bj.title, " \u9886\u53D6\u7ED3\u679C\uFF1A\u9886\u53D6\u6210\u529F\n")) : (console.log(bk.msg), n += "\u7528\u6237\uFF1A".concat(q, " \u62BD\u5956\u83B7\u5F97\uFF1A").concat(bj.title, " \u9886\u53D6\u7ED3\u679C\uFF1A").concat(bk.msg, "\n"));
               bl.next = 281;
               break;
             case 279:
-              console.log("请配置wxToken");
-              n += "用户：".concat(q, " 请配置wxToken\n");
+              console.log("\u8BF7\u914D\u7F6EwxToken");
+              n += "\u7528\u6237\uFF1A".concat(q, " \u8BF7\u914D\u7F6EwxToken\n");
             case 281:
               bl.next = 267;
               break;
@@ -1178,7 +1178,7 @@
                         switch (ax.prev = ax.next) {
                           case 0:
                             try {
-                              as ? (console.log("".concat(JSON.stringify(as))), console.log("".concat($.name, " API请求失败，请检查网路重试"))) : ak(JSON.parse(au));
+                              as ? (console.log("".concat(JSON.stringify(as))), console.log("".concat($.name, " API\u8BF7\u6C42\u5931\u8D25\uFF0C\u8BF7\u68C0\u67E5\u7F51\u8DEF\u91CD\u8BD5"))) : ak(JSON.parse(au));
                             } catch (aB) {
                               $.logErr(aB, at);
                             } finally {
@@ -1237,7 +1237,7 @@
                         switch (as.prev = as.next) {
                           case 0:
                             try {
-                              ap ? (console.log("".concat(JSON.stringify(ap))), console.log("".concat($.name, " API请求失败，请检查网路重试"))) : ak(JSON.parse(ar));
+                              ap ? (console.log("".concat(JSON.stringify(ap))), console.log("".concat($.name, " API\u8BF7\u6C42\u5931\u8D25\uFF0C\u8BF7\u68C0\u67E5\u7F51\u8DEF\u91CD\u8BD5"))) : ak(JSON.parse(ar));
                             } catch (at) {
                               $.logErr(at, aq);
                             } finally {
@@ -1302,7 +1302,7 @@
                               break;
                             }
                             console.log("".concat(JSON.stringify(as)));
-                            console.log("".concat($.name, " API请求失败，请检查网路重试"));
+                            console.log("".concat($.name, " API\u8BF7\u6C42\u5931\u8D25\uFF0C\u8BF7\u68C0\u67E5\u7F51\u8DEF\u91CD\u8BD5"));
                             av.next = 9;
                             break;
                           case 6:
@@ -1382,7 +1382,7 @@
                               break;
                             }
                             console.log("".concat(JSON.stringify(at)));
-                            console.log("".concat($.name, " API请求失败，请检查网路重试"));
+                            console.log("".concat($.name, " API\u8BF7\u6C42\u5931\u8D25\uFF0C\u8BF7\u68C0\u67E5\u7F51\u8DEF\u91CD\u8BD5"));
                             ax.next = 9;
                             break;
                           case 6:
@@ -1463,7 +1463,7 @@
                               break;
                             }
                             console.log("".concat(JSON.stringify(ao)));
-                            console.log("".concat($.name, " API请求失败，请检查网路重试"));
+                            console.log("".concat($.name, " API\u8BF7\u6C42\u5931\u8D25\uFF0C\u8BF7\u68C0\u67E5\u7F51\u8DEF\u91CD\u8BD5"));
                             ar.next = 9;
                             break;
                           case 6:
@@ -1548,7 +1548,7 @@
                               break;
                             }
                             console.log("".concat(JSON.stringify(ao)));
-                            console.log("".concat($.name, " API请求失败，请检查网路重试"));
+                            console.log("".concat($.name, " API\u8BF7\u6C42\u5931\u8D25\uFF0C\u8BF7\u68C0\u67E5\u7F51\u8DEF\u91CD\u8BD5"));
                             ar.next = 9;
                             break;
                           case 6:
@@ -1625,7 +1625,7 @@
                               break;
                             }
                             console.log("".concat(JSON.stringify(ar)));
-                            console.log("".concat($.name, " API请求失败，请检查网路重试"));
+                            console.log("".concat($.name, " API\u8BF7\u6C42\u5931\u8D25\uFF0C\u8BF7\u68C0\u67E5\u7F51\u8DEF\u91CD\u8BD5"));
                             au.next = 9;
                             break;
                           case 6:
@@ -1712,7 +1712,7 @@
                               break;
                             }
                             console.log("".concat(JSON.stringify(ap)));
-                            console.log("".concat($.name, " API请求失败，请检查网路重试"));
+                            console.log("".concat($.name, " API\u8BF7\u6C42\u5931\u8D25\uFF0C\u8BF7\u68C0\u67E5\u7F51\u8DEF\u91CD\u8BD5"));
                             at.next = 9;
                             break;
                           case 6:
@@ -1772,7 +1772,7 @@
                 };
                 $.post(al, function (am, an, ao) {
                   try {
-                    am ? (console.log("".concat(JSON.stringify(am))), console.log("".concat($.name, " API请求失败，请检查网路重试"))) : aj(JSON.parse(ao));
+                    am ? (console.log("".concat(JSON.stringify(am))), console.log("".concat($.name, " API\u8BF7\u6C42\u5931\u8D25\uFF0C\u8BF7\u68C0\u67E5\u7F51\u8DEF\u91CD\u8BD5"))) : aj(JSON.parse(ao));
                   } catch (ap) {
                     $.logErr(ap, an);
                   } finally {
@@ -1910,11 +1910,11 @@
                 aj.next = 5;
                 break;
               }
-              console.log("✅ ".concat($.name, ": 缓存中存在Utils代码, 跳过下载"));
+              console.log("\u2705 ".concat($.name, ": \u7F13\u5B58\u4E2D\u5B58\u5728Utils\u4EE3\u7801, \u8DF3\u8FC7\u4E0B\u8F7D"));
               eval(ah);
               return aj.abrupt("return", creatUtils());
             case 5:
-              console.log("🚀 ".concat($.name, ": 开始下载Utils代码"));
+              console.log("\uD83D\uDE80 ".concat($.name, ": \u5F00\u59CB\u4E0B\u8F7DUtils\u4EE3\u7801"));
               return aj.abrupt("return", new Promise(function () {
                 var am = i(g().mark(function an(ao) {
                   return g().wrap(function ap(aq) {
@@ -1924,7 +1924,7 @@
                           $.getScript("https://mirror.ghproxy.com/https://raw.githubusercontent.com/xzxxn777/Surge/main/Utils/Utils.js").then(function (as) {
                             $.setdata(as, "Utils_Code");
                             eval(as);
-                            console.log("✅ Utils加载成功, 请继续");
+                            console.log("\u2705 Utils\u52A0\u8F7D\u6210\u529F, \u8BF7\u7EE7\u7EED");
                             ao(creatUtils());
                           });
                         case 1:
@@ -2003,7 +2003,7 @@ function Env(t, e) {
       });
       return t.timeout ? ((t, e = 1000) => Promise.race([t, new Promise((t, s) => {
         setTimeout(() => {
-          s(new Error("请求超时"));
+          s(new Error("\u8BF7\u6C42\u8D85\u65F6"));
         }, e);
       })]))(o, t.timeout) : o;
     }
@@ -2442,7 +2442,7 @@ function Env(t, e) {
         }
       }
       if (!this.isMuteLog) {
-        let t = ["", "==============📣系统通知📣=============="];
+        let t = ["", "==============\uD83D\uDCE3\u7CFB\u7EDF\u901A\u77E5\uD83D\uDCE3=============="];
         t.push(e);
         s && t.push(s);
         o && t.push(o);
