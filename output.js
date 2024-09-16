@@ -1,14 +1,6 @@
-//Mon Sep 16 2024 13:44:18 GMT+0000 (Coordinated Universal Time)
+//Mon Sep 16 2024 13:45:40 GMT+0000 (Coordinated Universal Time)
 //Base:https://github.com/echo094/decode-js
 //Modify:https://github.com/smallfawn/decode_action
-var r = ["url"],
-  s = void 0;
-function c(_0x3c2bc1) {
-  return o(_0x3c2bc1) || n(_0x3c2bc1) || h(_0x3c2bc1) || e();
-}
-function e() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
 function n(_0x32d7ea) {
   if ("undefined" != typeof Symbol && null != _0x32d7ea[Symbol.iterator] || null != _0x32d7ea["@@iterator"]) {
     return Array.from(_0x32d7ea);
@@ -533,8 +525,8 @@ function G(_0x9e88d1, _0x2855a8) {
       _0x120e1f,
       _0x362ea7,
       _0x447bb5 = [],
-      _0x152baa = !0,
-      _0x13be71 = !1;
+      _0x152baa = true,
+      _0x13be71 = false;
     try {
       if (_0x120e1f = (_0x5aa9c7 = _0x5aa9c7.call(_0x9e88d1)).next, 0 === _0x2855a8) {
         if (Object(_0x5aa9c7) !== _0x5aa9c7) {
@@ -1426,7 +1418,7 @@ function tt(_0x1279bf, _0x3e3acd) {
     }, {
       key: "setdata",
       value: function (_0x497456, _0x117d2f) {
-        var _0x1487ef = !1;
+        var _0x1487ef = false;
         if (/^@/.test(_0x117d2f)) {
           var _0x43c407 = l(/^@(.*?)\.(.*?)$/.exec(_0x117d2f), 3),
             _0x1d9627 = _0x43c407[1],
