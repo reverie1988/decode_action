@@ -1,26 +1,3 @@
-/*
-北京现代
-
-积分换实物，积分涨的比较慢，自己决定跑不跑吧
-
-捉域名bm2-api.bluemembers.com.cn任意包的token填到bjxdCookie里，多账户换行隔开
-安卓CK需要在对应的CK后面加上#android
-不加默认为IOS CK，不通用
-
-重写：打开APP获取
-[task_local]
-#北京现代
-58 0,9-22/4 * * * https://raw.githubusercontent.com/leafTheFish/DeathNote/main/bjxd.js, tag=北京现代, enabled=true
-[rewrite_local]
-https://bm2-api.bluemembers.com.cn/v1/app/white/lovecar/banner url script-request-header https://raw.githubusercontent.com/leafTheFish/DeathNote/main/bjxd.js
-[MITM]
-hostname = bm2-api.bluemembers.com.cn
-
-定时：一天一两次
-cron: 36 7,20 * * *	
-
-const $ = new Env("北京现代")
-*/
 function _0x5721() {
 	const _0x1e7f1b = [
 		"d_rep",
