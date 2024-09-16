@@ -1,7 +1,6 @@
-//Mon Sep 16 2024 14:01:40 GMT+0000 (Coordinated Universal Time)
+//Mon Sep 16 2024 14:02:04 GMT+0000 (Coordinated Universal Time)
 //Base:https://github.com/echo094/decode-js
 //Modify:https://github.com/smallfawn/decode_action
-const $ = new Env("青椒");
 (() => {
   function b(ae) {
     b = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (ah) {
