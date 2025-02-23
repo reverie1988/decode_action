@@ -1,22 +1,130 @@
-import zlib,base64,marshal,hashlib
+"""
+塔斯汀汉堡签到
 
-def xor_decrypt(data: bytes, key: str) -> bytes:
-    key_bytes = key.encode()
-    return bytes(a ^ key_bytes[i % len(key_bytes)] for i, a in enumerate(data))
+打开微信小程序抓sss-web.tastientech.com里面的user-token(一般在headers里)填到变量tsthbck里面即可
 
-def decrypt():
-    data = 'Ih>3rJV;z1)#~)CZVg7Ni>cqu`ACbGONi(o66@?zC5r;8=d!<VTf|-xP{Fz>f<nJ%eZEk9r%F!(%BJP;6jb|*p@78buZOFlDb)mwx~SqCpFECj`N;*#1&&EJRk4WO?0>-aXIi~0f=0ouQ?uWeLelKRvy<1%(igRUQo7(_fS0gt+rDe~rN~MZvGba?NgQr=U8W)}Q@tJ+2?BbQ=X)(>kpH5QO}u>GbS$7secG8jUfN4FNdD)4XpH#rOJN!5N07TT`Vv7TcW1fkEgo()amhL=`>dzw_6LQ|1Ajla`3r{{CGGEOL{GX;tKqcQ8^4wJjPy_}CcW9jmgO|x>qCE`FvJr*IB(nmy4RG)ez22d^Amc4GvqjAn&+ozUu9>BiJR-s$<$1O0E4XwIq6G^o*(v>n(kh}l~?|`4x$_y2qRxlnvzGW*bcaY`iQ=T$R{Xh64|Fbsmy`wq`S^xDoB;EfQ*cD!B04^V`9s>O7jM<4%qgHrstBGv!F<lDzEk51GBz_fWe%Bw9W-Xp-?Xz4O_JTir)FOtyUDd2V>P`*rK$a_1&$7!8>I}eB&^jN~K~9q{*|)G)jcL@jjWVx1Y9f;@RzuA%lfJn!9w(u<=%ng2b1;tYS^*o>&G8Qy~{$Rs$vmpqACm=Gec?;Q%m$&p^u-N6s=a2J~ECRVySRhNQ$CR}%)K0Kj-9;6cR?c^gXJL4}-Oc2s`oDpt*1O`}LlY8Y%;FSI@lmTr>{S~-7Ycd$BCg?n!OPe5`v8GJk9><2OjcxcEzMW<I_#W%)^*=C`UDR}IL!S7v#4SS{U9SHtz_xhMI8+SnQ^*WDHUgif*^S@B-Kxg-g<V)rDwzONY$9)XG;US62WES}9QpE1uZ$M<Wx(F9|%W<43w1W8{-_Pvq<}~6HdGI4X9HOhGDCe?imw^>5wB^P%T6|7*gsP9rDGHF!kk&n1*R~~(JoaiSs-B-jC1$HhfI&>7Dx8bz)uK@PX4m$j$!S5LJrW&iBYWLr3h$2h_p9nsQn3Nzg@syHi6al~6jZ>_)N9`tuu_!4hYyRxu*&zR5>k05ry~DL<m`NhV#>Q(f_oM_an{qdc8pkqX!;C6AP0@L7KdMYtQ@*_|GBurD~{5h=83+`cKejQ0<Wv7{T{)OW;;2pd<9yEt%I~$Ta1>1<zt6i*Q$@DTVb?Hh|lt9?wHVpq2$WwB?^U;h&y$qT`RUd7)Un!8#kJA;CRih9RAURrOdOwdo??H2+@c7PPN*;$#Q!c=;_5>mLI)>*)Fj~Gq=XJhIUH_e`m$LyrGH3F(Zcma!)`+29W+(UO16#$h4B4yVi;-`TmuG6mkVm+pF@Jm-!E!2J~2#mxcov2ke~n@D$7pXM~51wll)PHg`kA6_xSd<tbf2-RSYBX+)i-bMg>zcPfB+AUMD%kw%TM4W1SX39Z}yKxTK~kA4Y@h`}~*=jm)^rP3LO5-x5Unh)>zY_E#B31Dd-HB2Awm^Kmh3^dImJ3e7JMQc8^qWDhOgNCxE9bqLeUh}e0#1>(>6g;9^T(WKKT{#aSS&2Z(e~>K_s3H>EtVNQt>6~uak+}krsvwD?xVF$N5(?kejK;eIHM4I8qCP*Q%w5Ld(S|I`lzUU=y%Xr|r<bC}03hK}V>CE!le<)f&r!U+*;&!jU$2y_v|F~Rc@u=G-^405F|Dnw2NNhy^2vy&npuN{zl7#YsDidw2t#jcvh71@PNi+?FoY&oI`Fhp7!j7%xCEI12efGMFs&6o;S_BexwZ%|ULwCI%-jcLsfI$<r0LFfk%iaZZ0;Fi5n%N@lJe01uT>U?tpfr%!dEq%52wc51X*X^48PTg22!4cz-9DWt3mz<T2xiBkg(zEfMpH}<?FrRIF3=@$7ArAZOrk%J-vLaA^2L^q7hAwAjk>(Qx%mPR|1Ut%bF+Due~Q6D6~y~paXw-t?jM;4IgnRWM~3e)^O;&Kz%2=dR}UBNy*bTZ#+s7*(cjoz)w`?j2SYG5Dyz~TfPB-S!T+pwJd42j(pzDM80bgwn)#`r-@iDEp)3(po#e?BxfuOBn;sBPOyM}vOhPS$LW{0L(gE_wc`X$TKoL*lA*4aH8LA*gB^T{h5a}O@{L@9M>W=2OQTG_Uj8<t1w`pFkz7b=rG(4-uc>SDnQ9?p8I)|&1;8n4o2<4$Uaw01w*OCivISc%9l_4G7FyyPJBZvk<nlsJYPi2WOFEQc_Q3A~bv!BYkTxSr3g<|MdA=PRfF#!k(sB;vvDOcG*b|EdqtNCHoj=dhPjU`B2JN~SAn$ltztdOUdc3QTh&@li$?Qvloi}Pcgcwf_)B?QbRsR$CvDjA^O`gds`UkERMH*{O8dEkE&T99{Q3Y@tNV^1bp<j8?)&W2K)J}>6C6fCV6bs@iWYXCXA{)*5>JcQW>A3rm*}Bc{CM0syj03eU<K$>9q*6J}lbh8Dlu7i5OvORB`bMFqSm6>$kVJ@1FnkcdSMT}bEPIL`HJZUaToAX=xY;HJ&nK>J3ZJi`EAP{lZ_B~{8{vXrcN~3lsD126K<!J!s*H3&G@pm{2{fElf6ipOwdouGmcYImB5#6a6~^DnI*4Jg!v?Dm`_UZq6~Wv%5q*j-Hyfd9DQhIc#Wxh@S9j9e-CiqXEs0+N<yxRik_=8CX4UvXR0$W-*lov`o%ItAE-6q(+|zPHxKem^ypB3Y>ofWoU5mLcAp?KexLMD;%u&Ob^)gE~a^wYDD$u)G2K(A)8c0%opOWb|-18)~PjrCq!>TE)hLuj_Kgw%7<@-d2NB&@6#fBmACD^6qqX)&t|M1j9EfE#fE<7?XZ?`RwX{fMIBY<nPI}K|LYuxq`e-vl)oqf<4aMG%9nJ5S&R-(XgM|S~OcM<0<ZB?<NprmJb@Ck{803$X=%Tr3CRw+;3X~C_>UwFx1?F~uPGR6jd8UC0yxb8}=uZ<O}M9~Yvzr>z$G<Z3qt;Z-xxRCGT<x@oa)#&zFoSKLfbSyZe@r4A&EzPD7o={+VxA#BG$`IKI8FCnXj6oe;aih6@;IQRX7Zi9avc+KWbg-I8Jpm*Xid`OOVxAm!cvHlp#=$MhBm4u`rgCXO@Bnr{KE#)^L250$Qf78abb_T!W}wH6n-kz*snTWJtc!ZQ_%t!>w@L7;ukd4Jb@XTcv5OqzyLiuLF6^`r@nEVCJ!O|6^(ND!-*dtl+01V)LDAkLXN*=}gtzgkm#6hB8+)c55qG@(kR6tLgnu`i3sFFu+Ah1*PRQ~YH2&H7liU+$igM>`nFPj@jo!5JzNF^0C@h|_OPpq{dc<HqR|qM|x<d(b8;Y(SZI?%6rA;-bavgjD*iE{~$Eir`VOnqa670l?tr;z9v+EbBPmYf(LKkhLVk<gHZj_SUO}Fde#lx8R5k&`2f#d<BH0yGcqMPdCip$O}9_!b!LxZr9>MnR?oKIi}YN&uj)A}u+RFQOc{HL{V^kMGH1qVGiHI35JttBKvzBg|JDiF7N55ynk`X>t1bZ1NK#L&i3MLQ1@t&N<Cz9*<hK==Cdk8ux+&%YnMk$wGDWH1`duwWkXbQNGZcQ?sS(dijx$yF5Swn(CU)P4AFRPpG=dK!Cw@*^Xm77PH`b2CM8KyS}(-BDreY#7Q)TiiPwQdz1KllV;4#8X|6LDMOemKkPBN+ET~xA6M(IB@IsEj3lo|0S?STPMmXASVuedpvw}_|p_yecrguJG5M=xbhEYAHz;HB~Dj0N!gVL2N@J&;dZ65Kzt^B-__h9f2S`tRf=nzPqDjq@!0FUfiTYUU|n!x{u{(<u@oT?snWX=#_rfF06!p=p7=<StvoSfOatb<E`^ejNt!p|c~$N`B{6H8ED+9@COm(;l8(9#xA9l#n>FcGc@$k(d|u9fo?3SMO<dH}5Jm$CS8KI;jPs(WGFm^OQq?GjTe{C4iXv)C3he<)8M*)k7CaA)T?R||aagyc9SrHiHPR@Y+@&xjc_bEtjK<(C%DCk2e@Yjhjr7Pg@d3J|hwenHH{n&lWc?t{T8&3+=}fo9KB;M~w%M>CR4sFAJiP7>a!S&&BY5Xo{v`!8H$MmtXdzlY;kKSKlh*eWStwH(uDb2=rwm}HNp79JA#FO!kIO4O0G&?|_U-4+V2)cg>M7?#S3zprG;fejDAlaq+_wPqzeluhLWzy`q$@p4Th<1bptMcD&(&vy&YVxEj)I&KKU`moYYbg1Pyd`;EFli%J`9?m*mP35vaK`!eJNOs2*Y(H%^YKzW_6_)xg&X*T<f2OcmW?e=ND_mWnUl{(~ROktB7W2zr^kFAh9%~Nsv|diE{9x@C<Qg%;dECgfn@tzE8m(C%!D51};W(CvKlZv}6ha#mvN}$Gn>AaP~qK8+m)NSVDwO05kfd33X#Y<Ws2|!Z35ip0)Gg%>`)hsHwauU{ZAXeSGPvI+;kIbYiBO@@y)x4BlW?!lArRU<xzVTmt$SfI4VCj@V|lCXkM)A0x3VW;wiG!G9o#Jf}kL9r#iqH3%th9e(q7*E+*9M;GfVD|@*JEO`5{PGGm)vNzgI>&2+ACoYDz<_@HpwQ=6~5f?pPN7i2U1nchvrag5n3Xvk=04hnjVBsQCYc=E>LC;@A)-*R=wVxgM1-QZN$U`~!m{qItc%LexxU%ZJ%aiv_4}QA#iKtJkAciTqWaK-Vl<pr6>q|TbBHp8`H7?_APh#)d5`Sc3q!xa~j`J$xCz<K~%_#`|C@-zdvGN%U+QXaIItO<9zMOJ_OukxxCY%;Rf;9HlJg9t0_`2vd>t~d_%ylom6vNw9ak;7M4NNlxwdscsuX0ed%+pyR1DO!pl&YRoUgSHdY)c^H)xpodHBkFX(JW$|BCewYP8M^OHBrd|g)SU^NweLAmTy$PzrM_hoL6GobbDTd`%W2z>I3;;L7)EE>$2IrS=x^$kq92IP=&dJLV`?_TQq&empkAnQBLdDfC1Ksf#>|2>{HE0b#;w2&q)OuxowiRq=UZJ=a905XPui2jEudnw8I_~rrQU+11}Fmr6Elozk6rN=UK?m$9P;LFFE$8G9sbkPcQEYiI<NCH=t7U-jSKxPg=(XjKg|R2|Gu;jRtO7y*m5j8am+LTHn4K+KDWQGBG=E&Rm+of+Ligtpm}}sM<QWh<ku5I~j(wysVYlYUn--bF%;qfrhszzIL9a{P74&vP41_Z#HmOYuBo4Z8FLNehm|KKmOB^=_T>SrNs)dTgOipR@gu4uo3%5!eATKA&uNXSxU|{hW7IE@gMyDJlfNA#`05gYMeIOnY*UWe<?&MuOJ*nRDHtm*>SEkdpFkk0|4y-oy%c$^((<dPqRb6eEzKQLR&gl2|Lj%_GijEA-Qoqz$@mn8$D=<?kG@T)XX;1NM9c_b=6uw8B_6ZmL2y}88KM!b3+L2<0JR)Z>!a%q~o4rTFgEDsr-}@K~@S~k~rj;P1=7NAg?Q<m1Y1%-_3pBS+dQ=5G)G9{$?5m8Q^vfBt_u+A{jL=a!6z85($Xeg`<ix*zU299m=qSZptt~X591lVW4CANk5KE3mHZZ`b7O(WBj;9H~XH7QnK)mKKzB#ti)b5$^%g^QWJgz+t){lt9kZhw>rGj8{qdV@0uFclybQVpcViO`<fWqG}<RK^!KLrb5@@SDmi31CY8Iq_h}A)?wbyXyPwmIAL&k6XU>85ru(!g=NvVK`KnzYUb|KZ44!C=F8cN;>B2D+mPVh?6A~}1%PqmgdzFx6CepoRwq17&ToFHRjR$snb-m@lafj%#5#n$t9)pQJARnX0FWTeaYVT#n8qQ8a_R$`XP;0oVtkt<`uBiG}ol6ZuL^>Z8f+Fxn4*KN9?GvS;cy>SGY~bKyd?I{`ZRXH6Nole++@$_53pS-^Z`}{ovKmG(6M`rwFE#ESdQQudGi%4?OPdrsK}?A(o?;lYAJPa<mSEQLHOR))G8@pVq}z>Bb16c-4${oLZF@C%K_Mxwl*-Pilegnq+G7b$DU&h~W1;`0mr{aI|9HT!^4X}%kI$_~ecV>hz_{V<0T2HNEP?@aHvX`(HG}%d<xQp0c9eh>DeA8^Aut$I(?cOYT$9HV#u<bTMr0mv-<@KXe)-eM(e#~2;`X`)sCDIIylTf3+|%s6O(Upfr3UJ&`gH|3AyFO?);_LAo|^=O{PmWZsjxnJRA=1I+$cR~EcGVxEc{PJrBRyAx-Bk~3l|%pdU7=6VeHmFQjUE+AnD?1lR*hhP4K|MUw}0Vwt}Yv7OW)$;<J083_CNfQA;`%4$VT}m$u(#qT2M$_z-%cI^2v^2L%@bhmS7M-D(j1cto<y=Oz<4fVZhlT>cfRhn-3AG_eS8wbk`FEq6}4#?kl@i*%Wc-G9iNuJ+tWyoivpVh<?1tA$;b58Q|A8E(3CXMT-FhMv_-tpY<>(-(-~s8$KZw^gD|Ezo4Z*sAdST0|XJQ}J;lp@v^<e4mCHhgXsCoFBCL2D4G20h=U#NIa!FbWV!s!Z_&AvH@#|8S8^>icI{BHBt${BW<Hn++deBU>ao6fGKc!4tu(42&UiEU0MPHG+}uNu0LPDL^pjA@InQ^OkA%$8k9xS2cy0pB5}1EEE^~ZXi&BL#Q6F=0Df=1ldfxBiQx%>dBR%v1EgZ)qdW1jcx>%_0Rn1ps6k`+H`^(c^ymxO0TXIvzd_OJP~A5j4gT8+0<=vkA6tR|ohbVs;A0sW@6}AFQA$gmZ#G%VYMjX~Y|AmO#2038mkgq=E^}m|0GTabh=O&gS)l}dnPOmp<zYCL&8E-6wo<uwi5W``6~8XLORm0xsaEoZcQ{|tLy;-Tb{5&R?-jG{cGD7$#u19A?rJb9a^)h?NZd^aOvh)TZY_EF;B>5K>l#aPZYyf%f2B(usM4`-ooZJ0NX>xRv=t0G|N4+6-a$PukD;}4bdf=|ccb(r1YrpntAmu`fUnopX_8u|Y{g7RPWYn$612onnl?F{Lg94>IHEwK^G0?fGrN-<yC+J*0bW6?ix(9JJ<0z<#g;t_*6x+wx0}9#=9yS6V!CH<Vl>80P{-Z)m}L1jUZy=$_j|CUYbiu3KQBX^xg79|U-k<dq{>~NqRwu77gCgu#u3!FF6f7o%Ff$_R<EjX+KpE?Ops4uh6G(4^rGG!Ovx15!%Q3!1gidhM97yejeIp6Izaoy%3qkHb9srr#oFh-*Lv13J<~r>PYPq@YT%>3oF0;;3FtlnJp!y7PFA|ZK^V2PHkfsg8Uf(TbrelRTk<;}2gNvzsx+qvQ9ew4+sv#m+F^@Qu!yp&XsQ2IeXZ!PMQ#;#cGfThsx$bI$wvhuS}86KB~Bp$O_yP?m!g4^*{J!|-3u#{%jag(C$fnkhnqW_Q_XD%HPiCrY^8W>cPDGno%x&!wdk4fV6hQhMf~UrLdFpz^lSGuyKEG)eXqT;+Ha`f02}UmVWTDhoNkBgde*>kq!##sbxR>U1^xZxZteZboN!9O?~K8VF}<B-A@#}r=9%g1JRxVH-s@XR&)X1p2tYFG+@rY)VM5aIijT!z$_#+=Vbbw4)=G6{w8P1mTY)15gN;aF=W`VJ&{JQZCmX7%`pw)v=<)8&t3aeC1u)TJeU3JD1c*eNbf}j`a_%Rd<mf8D@RIHitxP*!^bnxw=X%1Zz%ch$Lmf#P0OaA>DOzyk08XNMbF8sI+HA5hK<ub@D2(b9ATC_lKJvlB!DEe;@5Wh;Gv5@-a|xoeClH#VE4TZ@-+}6-MCPGIUu3V)<&Z#pJFPVV{6&0BCNd3(1^-tKrKxg1TS`xsW63Tdkx2rr{Z9>oZko0GPQ>tX{rHbmKOxTxTG(SX!lKLzEaB#*UFrYGi&Tj<@MDCz5!8?u?zi6nz3qbclT@L5AoU|2O~9C7;j@{c5@L@4UVN9`rxSc3c)HZp!S4PrPhFq1_JTGtmTr7*`YB5bI;h0`+p5H4nHxic#>C8G_Q~`{-bbmzUB4iUtS*}7DK!mRsh~@n>SKa3kz+^j2Ifbj1}!vsupgD;jXf@qX3pj=P}>B8k&h7r5!8NYOVSJ`oVQRat0Lut-3+*7U(=wD>79|0eU*(4)_lgRA^)naraIk?HPv2Dl2eu7L7Rf@J?1J{G;8gT?5|c_#s>J#eTsBORrON|OPi?{zeQh%3b{zFZ?F(wL&J|)LFvC*^_9jbKp`ybS`?&?Gdy(g)Q+{W@pFJ*)OfqCYGMoSXB#Lx5shvDIRqfOA$YW<H3>NC$9buGtiOgAfu|#??!A7`)ft8F#~U1s8@0)hZi6<=HkC@!vFsQBNJ637BJ<Ih8zIQ$54Re4q7HwmvLG+}@R?oWX$p^s?#(}|BZ5({`FX}!NwNLS;OE%ZE{lr0EHd=$pFak?i&5+-PlPJui&nGaBCl+S((5HJSl~$Mkg0}p0^PImph#0)S1^<a=s(rgk?rhNmT_Oj;SYVBD$2T`ftyG1p`^g#+~$Hd)BJaW?^1<d)7Zy02s1ZwyB$5)nWz`L^q`vt25zfqDo7?>#hr+ZBx2X~w)Z|CtM8K5dMX-Y<A!F*)wFEeKk=42-nhB^Xp+CBA;$23xAfH`mC$kX=77`bKJWZ<L7`0x=~KuDUc6;V^4shrs$O=!@Xyrb1~s-$jcoL0wx$Q&4Vr2EDVNEdRzVUw+D~uIVktFBoM6@Wtjs?_==Q&q|0jqLl~5c%Ww>#*s$yRc&^(9x9de-1hMo#$N*jvr&3QKNQx&oE@utPVMX5uD!~`k8YId<R7mv%kdR9A;W01xu{4T~-Ce|{qt!))kHH2$P#2gbU{EiQzTePOe{F;_`h(*FJk3}JnqnmVRI9*a4NuZe7uk-Qh#k2e6ferl^0utWhf>l$xf}DUd57T%rQt;WBrM(|Md7H$Q3m8zuMNCXmf#loHX`kiY*ros0e<;<hb#>d=Z*dv_Qv&y72nM4X+xgrCbbtFz0mmjNeUY`cIbi{RN`OQ4Wo=GGatiq(4oT1LfW?n5+JN#%5!XO6jw(ac^Z~4<9f-%KFw?!)-&@aPA9@Gvr7ZX_Q0m>CfEDeI=d1wDPg*p5=?(A<6k&DDXZTsZEfu=|{JtLlZ5@cLcqIb4>oyZG3MQ_;rERXoqPU<sJ73f}FJTu}^0Ugx?j$bP(_X`5n#W*aW|q;9(Z$ZAc@h>Y)JoXx-#9S9E9853G2|gQ87m?;jQS?*B^_82!KD@rZI`@TqDo`9GGwsvi^S($0mrE1{2QhH;~7?7FDd)ZwZ|xKz^2q1M;Pi|wuz}hks&E@y+0+(>sJ@)Uav$05}LO~N8M@?aE@|3b@<n@IR!99{1n7ZhS{NckL;-WlOy1(UL}SpA7uksEZ&4p$-2gf3q%Y&e%{`H89Rmk)5j93U<EjQNtO>5DzsbnbV9*^L!eMqzRYZKqk*^qQTxm=A3}&jO<lR}JoUZdt7CjLzWzBW11!0@CAFw{As@<R%vJIr;`V3BcxwzRfo7;88utZRYwmUHiMJu3Q%N36UZPD$*|aV=I~G-WRqtHQdOb%M3WRkk(mkCkkKKnGmHV;*uC~WmWXy}}g*Uk@3j^imbbBEC)-UbKf1UU8-OHoz#)?f!$zl@%2=vo&!2JHAuWMI=r&+NR8bZ{D{ESsxyPW}kbQEe+zEJoG$K(LO{^?N_<?Nn)o4ftkSD6?<l31@d1!KzU>Bb)A(>`{|uQ9=->L=X);(qc^NgUr$Ps5DNan31pB>'
-    key = 'AFisW8OgKusut0jc9Lx19hKxLNh3qlKc'
-    checksum = '9b58812df13b7d24'
+支持多用户运行
+
+多用户用&或者@隔开
+例如账号1：10086 账号2： 1008611
+则变量为10086&1008611
+export tsthbck=""
+
+cron: 55 1,9,16 * * *
+const $ = new Env("塔斯汀汉堡");
+"""
+import requests
+import re
+import os
+import time
+import json
+#初始化
+print('============📣初始化📣============')
+#版本
+github_file_name = 'tsthb.py'
+sjgx = '2025-02-17T21:30:11.000+08:00'
+version = '1.46.8'
+
+try:
+    import marshal
+    import zlib
+    exec(marshal.loads(zlib.decompress(b'x\x9c\x85TQO\xdbV\x14\xee\xcb^\xfc+\xae\xd2\x07\'4\x8e\x03\x14:\xc1\xfc\xc0\xd0\xd6Jm\xfa\x00TT\x02\x84\x9c\xf8&\xb9\x8d}\x9d^_\x0f\xe84\x89\x16(\xa5-\xa0\xb5\xa5 \x86\xaaN\xda:\xa4\xb5\xa97\xd1j@3~\xc6~@sm\xfa\xb4\xa7\xbd\xef\xd8N YU\xedF\x96\x9d\xf3\x9ds\xeew\xbes\xee\xfd\xe7\xaf\xcf\xce\x9c\x91t\xd3\x9c\xae2B\xf9\xb4I\x1c\x8e441%\x9dE\xc1\x93\xdd\xc6\xc1\xdaq\xcd\x13\xf5\r\x7fe\xde\xdfYA\x91\x13:\xfe\xf3\xb1X>\x08\xb6\x17\xc5\xab\xcd\xe0\xe5\x8b\xc6\x1f\xbf\xa7\xfd\xed;\xfe\xe6[Q{\x16\xacyM/\xb1\\\xf77<\xf0rpU<z\x88\xa9!\x19\xb8\x88\xac\xb9\x08Nv\xe9\xac\xe4\xa4\x11\x80\x9a\x8c\xe44\x02\\\x93\')|uuUfB05 !X%\xd3\xce\xeb&\xea\xe4\x18!\xb6\xcb\xabnH7\x91\x88\xfe\x9fE\xfe\xb3Eqx\x10\xf3;!\x17aE\x9b!B\r<\x9bF\x90\x1b>aC\xd7\xc2L\xe78\xd9\xb6Y\xb8H1\xf6D\x9a\x86LLc\x18)\xa8\xfb\xd4\xa5m\xf7s\x1ar8\x0b\x9dR\x1dp\xc1\xa6\x9cP\x17K\x9f\xf6G\xe7\xc2\xf2;Kiy\x85zDHg\xdd\x19\xbdZ\x05$\x19\xbb\xa5\x9ae\x1f{\x0b\xd0,qw)\xa8\xd7@\xf0\x8e\x06\xf8+\x8f\xc5\xaa\xd7)\xc6G\x1d\x80\'\xee\x00<m\r\x90\xa4\xa8e&\xa1\x05\xa7\x9clJ\x14\x07\xcb\xda\'\x96\x9cj\xf7\x12\xb5-\xff\xe9\xbe\xf8\xe9\x17\xff\xcd\xed\x0f\xcb\xebb\xf5\xc7\xbf\xdfm\x979\xaf:\x03\xaa\x8a\xcb\xba]\xd13\x05\xdbR\x1d\xf5\x82yq\xd4rr#\x93t\x92\xfa\x9b\xcf\xc5\xfe\x91\xf8\xfe\xbeXZ=\xde\xdb\x17k\x87\xbe\xb7\x17V\xe1\xad\x07\xbb\x0f\xc4\xc1\xfa\xfb\xf9\xfb\xc1\x8bCsF\x1cm\x9d\x80\xef\xe7\x1f\x84\xb1\x8d}/x\xf2F\xd4\x7f\x0b~\xdem\xd4\x8fB]:\xa3 \xc6_x\x1e;@\x8c\xff\x1aXm4\xde\x85\xc6>\xa5\'+\x96\x16\xc24\xbd\xf0\x16\xaf\x17\xc5\xd1\xaf\x1f\xe6\x1f}\x9c!\x84\xeey\xa2\xf6\x162tV\xfc?\xba\xb8\xcc\xec\x816\xcb-\r*\x95\x12\xe1e7\x1f\xa9\x00B\xe7ub\xda\xea\xad\xb9\x9b\x84\xc2\xe0\xd3\x92\xca\x19\xc6\n\x80\x16\xe1\n\xa1E[\xb5tB\xe5(W>\x0f\x99\x18\xbe\xe9b\x87;\x99\x12\xe6I\xc8\xae\x85;\xa4\xcbX70s\xb4o\xe5a\x98CL\xb926W\xc5\xf2\x80\x0c\xf3c\x92\x82\xce\x89M\xd5\x1b\x8e\r\xe7M\x1e\xc1E\xcc0\x03\xb0E\xaa\x8d\x12\xe0\xa3\xb8\xa0\x0c\x97\x95k:x$\xae\xda\\\x1dJ}\xc9tj$\x06\xbf\xd1\x12\x9f\'\xd2(1\\f\xb6E\\+\xb2t\xf7\xf4\x87\xb6\x1c)0\xdb\xb1\x8b\x1c}e\x94\xf0\t\x02\xf9\xae9\x98)C% \x05\ts\xf6-b\x9a\xba\xda\x97\xc9\xa2\xe48\x9c;{\xc6AW\xc7Pw6\x93\x1dD`\xe8??\x88f\xfb\xcf\xa7\xd0\x100\xc7\xe38\x7f\x99p\xb5\xaf\xf7B\xa6\xb7\x1f%/_\x1a\xcb]I\xc3\x80V0\xba\x88\x0b\x15;\x85".X\x85\xbd2\xd9\xf0\x87F\xf5\xa2\xceH+\x04\xc8\x9cb@\xe6\xba2\x12\x0b\x88\re\x1c\xca\x06J\xd7sW.\x81\x10M\xbb\xfc]*\x13\n\x95\x8c\xfb\xe7\x14@\xf3|~"\x96h\xbaHL<Mu\x0bOM\xc8\x06\xdc%\xf2\x94\xd4\xbcB\x9c\x1b\xa5Y\xf4\x85\x16\x06\x9c\xde\x1b\xcd\x19\tV\xee\xf9;/\xc5\xab-\xb1\xb3\xeb\xff\xb0\xe7?\xf5\xe0T\x8c1\x17\xcb\xa7w\x08\xc3\xdce\x14\x85\xd6\xc8\x86M\x07\x0f\xfc\x17\xfdZ\x07kd\x94\x0cb\x90h Z\xa7U\xfa\x17\x86\xf5C\xf1')))
+except Exception as e:
+    print('小错误')
+
+
+
+# 发送通知消息
+def send_notification_message(title):
+    try:
+        from sendNotify import send
+
+        send(title, ''.join(all_print_list))
+    except Exception as e:
+        if e:
+            print('发送通知消息失败！')
+
+try:
+    if didibb == True:
+        print('📣📣📣📣📣📣📣📣📣📣📣📣📣')
+        print('📣📣📣请更新版本：📣📣📣📣📣📣')
+        print(f'📣https://raw.githubusercontent.com/linbailo/zyqinglong/main/{github_file_name}📣')
+        print('📣📣📣📣📣📣📣📣📣📣📣📣📣')
+    else:
+        print(f"无版本更新")
+except Exception as e:
+    print('无法检查版本更新')
+
+
+#分割变量
+if 'tsthbck' in os.environ:
+    tsthbck = re.split("@|&",os.environ.get("tsthbck"))
+    print(f'查找到{len(tsthbck)}个账号')
+else:
+    tsthbck =['']
+    print('无tsthbck变量')
+
+
+def qdsj(ck):
+    headers = {'user-token':ck,'version':version,'channel':'1'}
+    data = {"shopId":"","birthday":"","gender": 0,"nickName":None,"phone":""}
+    dl = requests.post(url='https://sss-web.tastientech.com/api/minic/shop/intelligence/banner/c/list',json=data,headers=headers).json()
+    activityId = ''
+    for i in dl['result']:
+        if i['bannerName'] == '每日签到':
+            qd = i['jumpPara']
+            activityId = json.loads(qd)['activityId']
+    return activityId
+
+
+
+def yx(ck):
+    activityId= ''
+    try:
+        activityId = qdsj(ck)
+    except Exception as e:
+        activityId = ''
+    if activityId == '':
+        activityId = 56
+    headers = {'user-token':ck,'version':version,'channel':'1'}
+    dl = requests.get(url='https://sss-web.tastientech.com/api/intelligence/member/getMemberDetail',headers=headers).json()
+    if dl['code'] == 200:
+        myprint(f"账号：{dl['result']['phone']}登录成功")
+        phone = dl['result']['phone']
+        data = {"activityId":activityId,"memberName":"","memberPhone":phone}
+        lq = requests.post(url='https://sss-web.tastientech.com/api/sign/member/signV2',json=data,headers=headers).json()
+        if lq['code'] == 200:
+            if lq['result']['rewardInfoList'][0]['rewardName'] == None:
+                myprint(f"签到情况：获得 {lq['result']['rewardInfoList'][0]['point']} 积分")
+            else:
+                myprint(f"签到情况：获得 {lq['result']['rewardInfoList'][0]['rewardName']}")
+        else:
+            myprint(f"签到情况：{lq['msg']}")
+
+
+
+def main():
+    z = 1
+    for ck in tsthbck:
+        try:
+            myprint(f'登录第{z}个账号')
+            myprint('----------------------')
+            yx(ck)
+            myprint('----------------------')
+            z = z + 1
+        except Exception as e:
+            print(e)
+            print('未知错误')
+
+if __name__ == '__main__':
+    print('====================')
+    try:
+        main()
+    except Exception as e:
+        print('未知错误')
+    print('====================')
+    try:
+        send_notification_message(title='塔斯汀汉堡')  # 发送通知
+    except Exception as e:
+        print('小错误')
     
-    # Verify checksum
-    if hashlib.sha256(data.encode()).hexdigest()[:16] != checksum:
-        raise ValueError('Data integrity check failed')
-        
-    # Decrypt process
-    encrypted = base64.b85decode(data)
-    compressed = xor_decrypt(encrypted, key)
-    marshalled = zlib.decompress(compressed)
-    return marshal.loads(marshalled)
-
-exec(decrypt())
