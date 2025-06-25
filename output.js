@@ -1,4 +1,4 @@
-//Sun Jun 22 2025 03:59:25 GMT+0000 (Coordinated Universal Time)
+//Wed Jun 25 2025 00:48:24 GMT+0000 (Coordinated Universal Time)
 //Base:https://github.com/echo094/decode-js
 //Modify:https://github.com/smallfawn/decode_action
 const $ = new Env("爱路桥");
